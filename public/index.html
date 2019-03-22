@@ -7,7 +7,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         (function () {
             var config = {
@@ -24,18 +27,47 @@
 </head>
 
 <body>
-    <div id="step1" class="step">
-        <div class="slds-grid">
-
-            <main class="slds-col">
-               
-                <h1>welcome to your activity!</h1>
-            </main>
-            
-
-        </div>
-
-    </div>
+    <div class="well">
+        <form action="/person.php" method="post">
+            <div class="form-group form-heading">
+                push activity
+            </div>
+          <div class="form-group">
+            <label for="Campaign">Campaign Name</label>
+            <input class="form-control" type="text" name="Campaign" placeholder="Campaign Name">
+          </div>
+          <div class="form-group">
+            <label for="Title">Title</label>
+            <input class="form-control" type="text" name="Title" placeholder="Title">
+          </div>
+          <div class="form-group">
+                <label for="Image">Image URL</label>
+                <input class="form-control" type="text" name="Image" placeholder="Image URL">
+              </div>
+              <div class="form-group">
+                    <label for="Banner">Banner URL</label>
+                    <input class="form-control" id="banurl" type="text" onkeyup="updateDescriptionLength()" name="Banner" placeholder="Banner URL">
+                  </div>
+                  <div class="form-group">
+                        <label for="Description">Description</label>
+                        <input class="form-control" id="desc" type="text" name="Description" placeholder="Description" maxlength="12" onkeyup="updateDescriptionLength()">
+                        <span id="chars">12 characters remaining</span>
+                      </div>
+                      <div class="form-group">
+                            <label for="Notification">Notification URL</label>
+                            <input class="form-control" type="url" name="Notification" placeholder="Notification URL">
+                          </div>
+                          <div class="form-group">
+                                <label for="TTL">TTL (mins)</label>
+                                <input class="form-control" type="number" name="TTL" placeholder="0">
+                              </div>
+                              <div class="form-group">
+                                    <label for="batchcon">Batch Contacts (mins)</label>
+                                    <input class="form-control" type="number" name="batchcon" placeholder="0">
+                                  </div>
+          <input type="submit" class="btn btn-primary done-btn" value="Done">
+        </form>
+      </div>
 </body>
 
 </html>
