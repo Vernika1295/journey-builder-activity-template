@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
+            "name": "Insider Notification",
+          "description": "Push notifications using Insider",
           "step1Label": "Configure Activity"
         }
     },
