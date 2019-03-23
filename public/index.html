@@ -30,6 +30,7 @@
     <div class="well">
         <form action="/person.php" method="post">
             <div class="form-group form-heading">
+                <img src="images/logo.png"/>
                 push activity
             </div>
           <div class="form-group">
@@ -46,11 +47,11 @@
               </div>
               <div class="form-group">
                     <label for="Banner">Banner URL</label>
-                    <input class="form-control" id="banurl" type="text" onkeyup="updateDescriptionLength()" name="Banner" placeholder="Banner URL">
+                    <input class="form-control" id="banurl" type="text" name="Banner" placeholder="Banner URL">
                   </div>
                   <div class="form-group">
                         <label for="Description">Description</label>
-                        <input class="form-control" id="desc" type="text" name="Description" placeholder="Description" maxlength="12" onkeyup="updateDescriptionLength()">
+                        <input class="form-control" id="desc" type="text" name="Description" placeholder="Description">
                         <span id="chars">12 characters remaining</span>
                       </div>
                       <div class="form-group">
