@@ -108,10 +108,44 @@ define([
         }];
         
         payload['metaData'].isConfigured = true;
-
+        sendRequestToInsider(payload);
         console.log(payload);
         connection.trigger('updateActivity', payload);
     }
 
-
+    function sendRequestToInsider(payload)
+    {   alert(process.env.endPoint);
+        var JSONResponse = '';
+        var JsonBody = '';
+        JsonBody = '{Request Body}';
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "END_POINT_URL", true);
+        // xhr.setRequestHeader("Authorization","Bearer {!AccessToken}" ); 
+        xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onload = function () 
+        {
+            JSONResponse = xhr.responseText;
+        };
+        xhr.send(JsonBody);
+        setTimeout( function()
+            {
+                if(xhr.status == 404){                     
+                }
+                else if(xhr.status == 401){
+                }
+                else if(xhr.status == 500){
+                }
+                else if(xhr.status == 200)
+                {
+                    alert("Hey it worked");
+                    obj1 = JSON.parse(JSONResponse );
+                    for(var x=0;x< obj1.length;x++)
+                    {
+                        var singleEle = obj1[x];
+                    }
+                }
+            },
+        2000);
+    }
 });
