@@ -114,8 +114,7 @@ define([
     }
 
     function sendRequestToInsider(payload)
-    {   alert(process.env.endPoint);
-        var JSONResponse = '';
+    {   var JSONResponse = '';
         var JsonBody = '';
         JsonBody = '{Request Body}';
         var xhr = new XMLHttpRequest();
@@ -130,11 +129,14 @@ define([
         xhr.send(JsonBody);
         setTimeout( function()
             {
-                if(xhr.status == 404){                     
+                if(xhr.status == 404){
+                    alert("404");                     
                 }
                 else if(xhr.status == 401){
+                    alert("401");
                 }
                 else if(xhr.status == 500){
+                    alert("500");
                 }
                 else if(xhr.status == 200)
                 {
