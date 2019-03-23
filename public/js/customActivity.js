@@ -94,10 +94,14 @@ define([
     }
 
     function save() {
-        alert("Hi");
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
-
+        var campaignName=$("#camp").val();
+        var title=$("#titl").val();
+        var imageUrl=$("#imgurl").val();
+        var bannerUrl=$("#banurl").val();
+        var description=$("#desc").val();
+        var notificationUrl=$("#noturl").val();
+        var ttl=$("#ttl").val();
+        var batchContacts=$("#batch").val();
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
