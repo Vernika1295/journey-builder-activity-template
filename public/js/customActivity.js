@@ -40,7 +40,7 @@ define([
             }
             $("#chars").html(charValue); 
         });
-        $("#banurl").keydown(function(e){
+        $("#banurl").keyup(function(e){
             var descValue=$("#desc").val();
             var banValue=$("#banurl").val();
             var charValue="";
@@ -94,6 +94,7 @@ define([
     }
 
     function save() {
+        alert("Hi");
         var postcardURLValue = $('#postcard-url').val();
         var postcardTextValue = $('#postcard-text').val();
 
