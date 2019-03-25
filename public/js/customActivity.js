@@ -119,18 +119,13 @@ define([
             "ios_sound": "Your custom sound name for iOS goes here",
             "test_push":true,
         }    
-        jQuery.ajax( {
-            url: 'https://mobile.useinsider.com/api/v1/push/bulk',
-            type: 'POST',
-            data: { content: jsonObj },
-            beforeSend : function( xhr ) {
-                xhr.setRequestHeader( "Content-Type", "application/json");
-            },
-            success: function( response ) {
-                alert("Hey");
-            }
-        });    
-
+        var xhr=new XMLHttpRequest();
+        xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",true);
+        xhr.setRequestHeader("Content-Type","application/json");\
+        var responseObj=xhr.send(jsonObj);
+        alert(JSON.stringify(responseObj));
+        
+        
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
