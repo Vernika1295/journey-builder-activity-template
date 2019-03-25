@@ -17,7 +17,9 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+          "contactFirstName" : "{{Contact.Default.FirstName}}",
+          "contactLastName" : "{{Contact.Default.LastName}}",          
+          "contactEmailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
                 }									
 			],
           "outArguments": [],
@@ -31,7 +33,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "Y4j4kJAZC8j27k0VDNhSn1eRzuSmDXHYqbUL3BIkMmWSvRAXbiYklKArqnRHXNdOiLkwi7kx4rgGlY0wEkIBCejULFRmfDK5zdJP9zFAb1IYcAceOgLvQQloQ6OjBt4Ry8aC-d-J_8cjO0xQfiRPdTXOyz6UpCBjTL1hC6NeVcbmsABZfweWZqwqxG5tcGAQ02gJjcc0CPoFVRSY_LKb6jeP6tIIIDNq-ay9kAhWVrHUu5X6siD5t6YCwsO2PA2",
+      "applicationExtensionKey": "a275caac-5605-4967-8e82-35b1d8ffd6ca",
       "save": {
         "url": "https://pushnotifyapp.herokuapp.com/save",
           "verb": "POST",
