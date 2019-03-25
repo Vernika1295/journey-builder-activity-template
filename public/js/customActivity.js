@@ -129,7 +129,7 @@ define([
             console.log(xhr.readyState);    
         };
         console.log(xhr.status);
-        console.log(xhr.responseText);
+        console.log(xhr.readyState);
         xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
