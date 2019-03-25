@@ -109,24 +109,26 @@ define([
             "campaign_name": campaignName,
             "segment_name": "All People",
             "title": title,
-            "content": "Your push content goes here.",
+            "content": description,
             "deeplink": {
                 "your_deeplink_key": "value", 
                 "your_another_deeplink_key": "value"
             },
-            "notification_image": "https://your_image_url.jpg",
+            "notification_image": notificationUrl,
             "android_sound": "Your custom sound name for Android goes here",
             "ios_sound": "Your custom sound name for iOS goes here",
             "test_push":true,
         }    
         console.log("Json structure: "+JSON.stringify(jsonObj));
         var xhr=new XMLHttpRequest();
-        xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk");
+        xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",false);
         xhr.setRequestHeader("Content-Type","application/json",true);
+        console.log(xhr.status);
+        /*
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);    
-        };
+        };*/
         xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
