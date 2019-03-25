@@ -113,12 +113,14 @@ define([
         connection.trigger('updateActivity', payload);
     }
 
+
+
     function sendRequestToInsider(payload)
     {   var JSONResponse = '';
         var JsonBody = '';
         JsonBody = '{Request Body}';
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "END_POINT_URL", true);
+        xhr.open("POST", "https://mobile.useinsider.com/api/v1/push/bulk", true);
         // xhr.setRequestHeader("Authorization","Bearer {!AccessToken}" ); 
         xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
         xhr.setRequestHeader("Accept", "application/json");
