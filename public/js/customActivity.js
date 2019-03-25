@@ -102,21 +102,49 @@ define([
         var notificationUrl=$("#noturl").val();
         var ttl=$("#ttl").val();
         var batchContacts=$("#batch").val();
+
+        //Generating json to send
+        var jsonObj={
+            "api_key": "abdullah",
+            "campaign_name": "Insider API Demo",
+            "segment_name": "All People",
+            "title": "Your push notification title goes here",
+            "content": "Your push content goes here.",
+            "deeplink": {
+                "your_deeplink_key": "value", 
+                "your_another_deeplink_key": "value"
+            },
+            "notification_image": "https://your_image_url.jpg",
+            "android_sound": "Your custom sound name for Android goes here",
+            "ios_sound": "Your custom sound name for iOS goes here",
+            "test_push":true,
+        }    
+        jQuery.ajax( {
+            url: 'https://mobile.useinsider.com/api/v1/push/bulk',
+            type: 'POST',
+            data: { content: jsonObj },
+            beforeSend : function( xhr ) {
+                xhr.setRequestHeader( "Content-Type", "application/json");
+            },
+            success: function( response ) {
+                alert("Hey");
+            }
+        });    
+
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;
-        sendRequestToInsider(payload);
-        console.log(payload);
         connection.trigger('updateActivity', payload);
     }
 
 
 
     function sendRequestToInsider(payload)
-    {   var JSONResponse = '';
+    {   /*
+        var JSONResponse = '';
         var JsonBody = '';
         JsonBody = '{Request Body}';
         var xhr = new XMLHttpRequest();
@@ -152,5 +180,6 @@ define([
                 }
             },
         2000);
+        */
     }
 });
