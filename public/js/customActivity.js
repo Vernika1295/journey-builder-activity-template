@@ -122,7 +122,10 @@ define([
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk");
         xhr.setRequestHeader("Content-Type","application/json",true);
-        xhr.onreadystatechange = processRequest;
+        xhr.onreadystatechange = function(e){
+            alert(xhr.status);
+            alert(xhr.readyState);    
+        };
         var responseObj=xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
@@ -131,11 +134,6 @@ define([
         
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
-    }
-
-    function processRequest(e) {
-        alert(xhr.status);
-        alert(xhr.readyState);
     }
  
 });
