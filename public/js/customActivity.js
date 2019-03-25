@@ -121,7 +121,7 @@ define([
         }    
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",true);
-        xhr.setRequestHeader("Content-Type","application/json");\
+        xhr.setRequestHeader("Content-Type","application/json");
         var responseObj=xhr.send(jsonObj);
         alert(JSON.stringify(responseObj));
         
@@ -133,48 +133,5 @@ define([
         
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
-    }
-
-
-
-    function sendRequestToInsider(payload)
-    {   /*
-        var JSONResponse = '';
-        var JsonBody = '';
-        JsonBody = '{Request Body}';
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://mobile.useinsider.com/api/v1/push/bulk", true);
-        // xhr.setRequestHeader("Authorization","Bearer {!AccessToken}" ); 
-        xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.onload = function () 
-        {
-            JSONResponse = xhr.responseText;
-        };
-        JSONResponse=xhr.send(JsonBody);
-        alert(JSON.stringify(JSONResponse));
-        setTimeout( function()
-            {
-                if(xhr.status == 404){
-                    alert("404");                     
-                }
-                else if(xhr.status == 401){
-                    alert("401");
-                }
-                else if(xhr.status == 500){
-                    alert("500");
-                }
-                else if(xhr.status == 200)
-                {
-                    alert("Hey it worked");
-                    obj1 = JSON.parse(JSONResponse );
-                    for(var x=0;x< obj1.length;x++)
-                    {
-                        var singleEle = obj1[x];
-                    }
-                }
-            },
-        2000);
-        */
-    }
+    }   
 });
