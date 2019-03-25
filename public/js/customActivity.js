@@ -121,14 +121,15 @@ define([
         }    
         console.log("Json structure: "+JSON.stringify(jsonObj));
         var xhr=new XMLHttpRequest();
-        xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",false);
+        xhr.open("GET","https://my-json-server.typicode.com/typicode/demo",true);
+        //xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",true);
         xhr.setRequestHeader("Content-Type","application/json",true);
-        console.log(xhr.status);
-        /*
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);    
-        };*/
+        };
+        console.log(xhr.status);
+        console.log(xhr.responseText);
         xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
