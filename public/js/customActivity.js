@@ -106,9 +106,9 @@ define([
         //Generating json to send
         var jsonObj={
             "api_key": "abdullah",
-            "campaign_name": "Insider API Demo",
+            "campaign_name": campaignName,
             "segment_name": "All People",
-            "title": "Your push notification title goes here",
+            "title": title,
             "content": "Your push content goes here.",
             "deeplink": {
                 "your_deeplink_key": "value", 
@@ -119,14 +119,15 @@ define([
             "ios_sound": "Your custom sound name for iOS goes here",
             "test_push":true,
         }    
+        console.log("Json structure: "+JSON.stringify(jsonObj));
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk");
         xhr.setRequestHeader("Content-Type","application/json",true);
         xhr.onreadystatechange = function(e){
-            alert(xhr.status);
-            alert(xhr.readyState);    
+            console.log(xhr.status);
+            console.log(xhr.readyState);    
         };
-        var responseObj=xhr.send(jsonObj);
+        xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
