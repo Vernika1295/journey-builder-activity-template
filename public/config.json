@@ -26,29 +26,29 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 10000
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "__application_key_from_appcenter_here__",
+      "applicationExtensionKey": "Y4j4kJAZC8j27k0VDNhSn1eRzuSmDXHYqbUL3BIkMmWSvRAXbiYklKArqnRHXNdOiLkwi7kx4rgGlY0wEkIBCejULFRmfDK5zdJP9zFAb1IYcAceOgLvQQloQ6OjBt4Ry8aC-d-J_8cjO0xQfiRPdTXOyz6UpCBjTL1hC6NeVcbmsABZfweWZqwqxG5tcGAQ02gJjcc0CPoFVRSY_LKb6jeP6tIIIDNq-ay9kAhWVrHUu5X6siD5t6YCwsO2PA2",
       "save": {
-        "url": "https://mc.s10.exacttarget.com/journeybuilder/save",
+        "url": "https://pushnotifyapp.herokuapp.com/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://mc.s10.exacttarget.com/journeybuilder/publish",
+        "url": "https://pushnotifyapp.herokuapp.com/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://mc.s10.exacttarget.com/journeybuilder/stop",
+        "url": "https://pushnotifyapp.herokuapp.com//stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://mc.s10.exacttarget.com/journeybuilder/validate",
+        "url": "https://pushnotifyapp.herokuapp.com//validate",
         "verb": "POST",
         "useJwt": true
       }
