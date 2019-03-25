@@ -132,7 +132,9 @@ define([
         xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
+            "contactFirstName" : "{{Contact.Default.FirstName}}",
+            "contactLastName" : "{{Contact.Default.LastName}}",
+            "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;
