@@ -126,7 +126,8 @@ define([
         {
             JSONResponse = xhr.responseText;
         };
-        xhr.send(JsonBody);
+        JSONResponse=xhr.send(JsonBody);
+        alert(JSON.stringify(JSONResponse));
         setTimeout( function()
             {
                 if(xhr.status == 404){
