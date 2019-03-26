@@ -93,42 +93,49 @@ define([
     }
 
     function save() {
-        var campaignName=$("#camp").val();
+        var campaignId=$("#camp").val();
         var title=$("#titl").val();
         var imageUrl=$("#imgurl").val();
-        var bannerUrl=$("#banurl").val();
-        var description=$("#desc").val();
-        var notificationUrl=$("#noturl").val();
-        var ttl=$("#ttl").val();
-        var batchContacts=$("#batch").val();
+        var message=$("#msg").val();
+        var apikey=$("#apikey").val();
+        var deepLink=$("#deep").val();
+       
+        //Validations
+        if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
+            alert("Please fill all the required fields: Api Key, Message and Title.");
+            return false;
+        }
 
         //Generating json to send
-        var jsonObj={
-            "api_key": "abdullah",
-            "campaign_name": campaignName,
-            "segment_name": "All People",
-            "title": title,
-            "content": description,
-            "deeplink": {
-                "your_deeplink_key": "value", 
-                "your_another_deeplink_key": "value"
-            },
-            "notification_image": notificationUrl,
-            "android_sound": "Your custom sound name for Android goes here",
-            "ios_sound": "Your custom sound name for iOS goes here",
-            "test_push":true,
-        }    
+        var jsonObj={  
+            "api_key":apikey,
+            "notifications":[  
+               {
+                  "target":{  
+                     "email":"vernika.1295@gmail.com"
+                  },
+                  "title":title,
+                  "message":message,
+                  "deep_link":{  
+                     "your_deeplink_key":deepLink,
+                     "your_another_deeplink_key":deepLink
+                  },
+                  "image_URL":imageUrl,
+                  "android_sound":"Beep",
+                  "ios_sound":"Beep",
+                  "channel_id": 1,
+                  "camp_id": campaignId
+               }
+            ]
+         }    
         console.log("Json structure: "+JSON.stringify(jsonObj));
         var xhr=new XMLHttpRequest();
-        xhr.open("GET","https://my-json-server.typicode.com/typicode/demo",true);
-        //xhr.open("POST","https://mobile.useinsider.com/api/v1/push/bulk",true);
+        xhr.open("POST","https://mobile.useinsider.com/api/v1/notification/user",true);
         xhr.setRequestHeader("Content-Type","application/json",true);
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);    
         };
-        console.log(xhr.status);
-        console.log(xhr.readyState);
         xhr.send(jsonObj);
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,

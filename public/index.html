@@ -33,42 +33,30 @@
                 push activity
             </div>
           <div class="form-group">
-            <label for="Campaign">Campaign Name</label>
-            <input required="true" id="camp" class="form-control" type="text" name="Campaign" placeholder="Campaign Name">
+            <label for="apikey">API Key</label>
+            <input required="true" id="apikey" class="form-control" type="text" name="apikey" placeholder="Enter the API key here">
           </div>
           <div class="form-group">
             <label for="Title">Title</label>
-            <input id="titl" required="true" class="form-control" type="text" name="Title" placeholder="Title">
+            <input id="titl" required="true" class="form-control" type="text" name="Title" placeholder="Enter the title here">
           </div>
-          <!--
           <div class="form-group">
-                <label for="Image">Image URL</label>
-                <input id="imgurl" class="form-control" type="text" name="Image" placeholder="Image URL">
+                <label for="Message">Message</label>
+                <input required=true class="form-control" id="msg" type="text" name="Message" placeholder="Enter your message here">
               </div>
-              
+            
               <div class="form-group">
-                    <label for="Banner">Banner URL</label>
-                    <input class="form-control" id="banurl" type="text" name="Banner" placeholder="Banner URL">
-                  </div> -->
+                    <label for="image">IMage URL</label>
+                    <input id="imgurl" class="form-control" type="url" name="image" placeholder="Enter the image url here">
+                  </div>
                   <div class="form-group">
-                        <label for="Description">Description</label>
-                        <input required=true class="form-control" id="desc" type="text" name="Description" placeholder="Description">
-                        <span id="chars">12 characters remaining</span>
-                      </div>
-                    
-                      <div class="form-group">
-                            <label for="Notification">Notification URL</label>
-                            <input id="noturl" class="form-control" type="url" name="Notification" placeholder="Notification URL">
-                          </div>
-                          <!--
-                          <div class="form-group">
-                                <label for="TTL">TTL (mins)</label>
-                                <input class="form-control" id="ttl" type="number" name="TTL" placeholder="0">
-                              </div>
-                              <div class="form-group">
-                                    <label for="batchcon">Batch Contacts (mins)</label>
-                                    <input id="batch" class="form-control" type="number" name="batchcon" placeholder="0">
-                                  </div> -->
+                    <label for="deeplink">Title</label>
+                    <input id="deep" required="false" class="form-control" type="text" name="Deep Link" placeholder="Enter the deep link here">
+                  </div>
+                  <div class="form-group">
+                    <label for="campaign">Title</label>
+                    <input id="camp" required="false" class="form-control" type="text" name="campaign" placeholder="Enter the campaign id here">
+                  </div>
         </form>
       </div>
 </body>
