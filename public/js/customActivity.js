@@ -21,36 +21,7 @@ define([
         connection.trigger('ready');
 
         connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-
-        $("#desc").keydown(function(e){
-            var descValue=$("#desc").val();
-            var banValue=$("#banurl").val();
-            var charValue="";
-            if(banValue==""){
-                charValue=(12-descValue.length)+" characters remaining";
-                if(descValue.length==12){
-                    e.preventDefault();
-                }
-            }else{
-                charValue=(30-descValue.length)+" characters remaining";
-                if(descValue.length==30){
-                    e.preventDefault();
-                }
-            }
-            $("#chars").html(charValue); 
-        });
-        $("#banurl").keyup(function(e){
-            var descValue=$("#desc").val();
-            var banValue=$("#banurl").val();
-            var charValue="";
-            if(banValue==""){
-                charValue=(12-descValue.length)+" characters remaining";
-            }else{
-                charValue=(30-descValue.length)+" characters remaining";
-            }
-            $("#chars").html(charValue); 
-        });    
+        connection.trigger('requestEndpoints');        
     }
 
     function initialize(data) {
@@ -137,13 +108,19 @@ define([
             console.log(xhr.readyState);    
         };
         xhr.send(jsonObj);
+        /*
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "contactFirstName" : "{{Contact.Default.FirstName}}",
             "contactLastName" : "{{Contact.Default.LastName}}",
             "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
         }];
-        
+        */
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "contactEmailAddress": "{{Contact.Default.EmailAddress}}"
+        }];
+        console.log("Payload from execute:"+JSON.stringify(payload));
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     }
