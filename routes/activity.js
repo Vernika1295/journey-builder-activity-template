@@ -105,6 +105,7 @@ exports.execute = function (req, res) {
 exports.publish = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
+    alert("hy");
     logData(req);
     res.send(200, 'Publish');
 };
@@ -115,6 +116,7 @@ exports.publish = function (req, res) {
 exports.validate = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
+    alert("validating");
     logData(req);
     res.send(200, 'Validate');
 };
