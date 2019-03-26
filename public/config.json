@@ -66,7 +66,13 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [],
+                "inArguments": [{
+                  "myInArgument": {
+                    "dataType": "String",
+                    "isNullable": false,
+                    "direction": "in"
+                  }
+                }],
                 "outArguments": []
             }
         }
