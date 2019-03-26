@@ -73,6 +73,8 @@
                     "direction": "in"
                   }
                 }],
+                "sendableCustomObjectField": "EmailAddress",
+                "sendableSubscriberField": "_SubscriberKey",
                 "outArguments": []
             }
         }
