@@ -28,7 +28,7 @@ define([
         if (data) {
             payload = data;
         }
-        console.log(data);
+        console.log(JSON.stringify(data));
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -38,7 +38,7 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log(payload['arguments'].execute.inArguments);
+        console.log(JSON.stringify(payload['arguments'].execute.inArguments));
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
