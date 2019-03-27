@@ -69,7 +69,13 @@ define([
         var message=$("#msg").val();
         var apikey=$("#apikey").val();
         var deepLink=$("#deep").val();
-       
+        module.exports.cors = {
+            allRoutes: true,
+            origin: '*',
+            credentials: true,
+            methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+            headers: 'content-type'
+          };
         //Validations
         if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
             alert("Please fill all the required fields: Api Key, Message and Title.");
