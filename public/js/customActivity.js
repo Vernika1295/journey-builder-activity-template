@@ -111,10 +111,10 @@ define([
         xhr.open("POST","https://mobile.useinsider.com/api/v1/notification/user",true);
         xhr.setRequestHeader("Content-Type","application/json",true);
 
-        xhr.setRequestHeader("Access-Control-Allow-Origin",'https://pushnotifyapp.herokuapp.com/' );
+        //xhr.setRequestHeader("Access-Control-Allow-Origin",'https://pushnotifyapp.herokuapp.com/' );
         xhr.setRequestHeader("Access-Control-Allow-Credentials", true);
         xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        xhr.setRequestHeader("Access-Control-Allow-Headers","origin, x-requested-with, content-type");
+        xhr.setRequestHeader("Access-Control-Allow-Headers","origin, x-requested-with, content-type,Access-Control-Allow-Origin,content-encoding,Date,Transfer-Encoding,Connection,vary,x-envoy-upstream-service-time,Expect-CT,Server,CF-RAY");
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);
