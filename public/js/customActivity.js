@@ -38,8 +38,7 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log(JSON.stringify(payload['arguments'].execute.inArguments));
-
+        
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
                 
@@ -141,7 +140,7 @@ define([
          }];
         console.log("Payload from execute:"+JSON.stringify(payload));
         payload['metaData'].isConfigured = true;
-        payload=jsonObj;
+        //payload=jsonObj;
         console.log("Payload -> "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
     }
