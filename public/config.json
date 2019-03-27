@@ -24,7 +24,7 @@
           "url": "https://mobile.useinsider.com/api/v1/notification/user",
            "verb": "POST",
             "body": "",
-            "header": {"Content-Type":"application/json"},
+            "header": "{'Content-Type':'application/json'}",
             "format": "json",
             "useJwt": false,
             "timeout": 10000
