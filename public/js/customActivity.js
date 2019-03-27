@@ -76,14 +76,14 @@ define([
             alert("Please fill all the required fields: Api Key, Message and Title.");
             return false;
         }
-
+        var contactEmail="vernika.1295@gmail.com";
         //Generating json to send
         var jsonObj={  
             "api_key":apikey,
             "notifications":[  
                {
                   "target":{  
-                     "email":"vernika.1295@gmail.com"
+                     "email":contactEmail
                   },
                   "title":title,
                   "message":message,
