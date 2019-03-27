@@ -121,7 +121,7 @@ define([
             console.log(xhr.responseText);    
         };
         xhr.send(jsonObj);
-        
+        /*
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "contactFirstName" : "{{Contact.Default.FirstName}}",
@@ -156,7 +156,7 @@ define([
         payload['metaData'].isConfigured = true;
         //payload=jsonObj;
         console.log("Payload -> "+JSON.stringify(payload));
-        //connection.trigger('updateActivity', payload);
+        //connection.trigger('updateActivity', payload);*/
     }
  
 });
