@@ -112,7 +112,7 @@ define([
         xhr.setRequestHeader("Content-Type","application/json",true);
 
 
-        xhr.setRequestHeader("Access-Control-Allow-Origin", xhr.getRequestHeader("Origin"));
+        xhr.setRequestHeader("Access-Control-Allow-Origin","*" );
         xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
         xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         xhr.setRequestHeader("Access-Control-Max-Age", "3600");
