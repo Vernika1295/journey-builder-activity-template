@@ -116,13 +116,30 @@ define([
             "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
         }];
         */
-       /*
-        payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
-            "contactEmailAddress": "{{Contact.Default.EmailAddress}}"
-        }];
+       
+        payload['arguments'].execute.inArguments = [{  
+            "api_key":apikey,
+            "notifications":[  
+               {
+                  "target":{  
+                     "email":contactEmail
+                  },
+                  "title":title,
+                  "message":message,
+                  "deep_link":{  
+                     "your_deeplink_key":deepLink,
+                     "your_another_deeplink_key":deepLink
+                  },
+                  "image_URL":imageUrl,
+                  "android_sound":"Beep",
+                  "ios_sound":"Beep",
+                  "channel_id": 1,
+                  "camp_id": campaignId
+               }
+            ]
+         }];
         console.log("Payload from execute:"+JSON.stringify(payload));
-        payload['metaData'].isConfigured = true;*/
+        payload['metaData'].isConfigured = true;
         payload=jsonObj;
         console.log("Payload -> "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
