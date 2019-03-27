@@ -107,8 +107,8 @@ define([
             console.log(xhr.status);
             console.log(xhr.readyState);    
         };
-        xhr.send(jsonObj);
-        /*
+        /*xhr.send(jsonObj);
+        
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "contactFirstName" : "{{Contact.Default.FirstName}}",
@@ -116,12 +116,15 @@ define([
             "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
         }];
         */
+       /*
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "contactEmailAddress": "{{Contact.Default.EmailAddress}}"
         }];
         console.log("Payload from execute:"+JSON.stringify(payload));
-        payload['metaData'].isConfigured = true;
+        payload['metaData'].isConfigured = true;*/
+        payload=jsonObj;
+        console.log("Payload -> "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
     }
  

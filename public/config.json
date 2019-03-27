@@ -21,7 +21,7 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/execute",
+          "url": "https://mobile.useinsider.com/api/v1/notification/user",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,7 +33,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "a275caac-5605-4967-8e82-35b1d8ffd6ca",
       "save": {
-        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/save",
+        "url": "https://mobile.useinsider.com/api/v1/notification/user",
           "verb": "POST",
         "useJwt": true
        },
