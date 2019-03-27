@@ -21,19 +21,19 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://mobile.useinsider.com/api/v1/notification/user",
+          "url": "https://pushnotifyapp.herokuapp.com/journeybuilder.execute",
            "verb": "POST",
             "body": "",
             "header": "{'Content-Type':'application/json'}",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
             "timeout": 10000
         }
     },
     "configurationArguments": {
       "applicationExtensionKey": "a275caac-5605-4967-8e82-35b1d8ffd6ca",
       "save": {
-        "url": "https://mobile.useinsider.com/api/v1/notification/user",
+        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
