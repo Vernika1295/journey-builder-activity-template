@@ -116,7 +116,8 @@ define([
             "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
         }];
         */
-       
+       payload['arguments'] = payload['arguments'] || {};
+		payload['arguments'].execute = payload['arguments'].execute || {};
         payload['arguments'].execute.inArguments = [{  
             "api_key":apikey,
             "notifications":[  
