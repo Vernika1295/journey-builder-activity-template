@@ -69,6 +69,7 @@ define([
         var message=$("#msg").val();
         var apikey=$("#apikey").val();
         var deepLink=$("#deep").val();
+        /*
         module.exports.cors = {
             allRoutes: true,
             origin: '*',
@@ -76,6 +77,7 @@ define([
             methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
             headers: 'content-type'
           };
+          */
         //Validations
         if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
             alert("Please fill all the required fields: Api Key, Message and Title.");
@@ -108,6 +110,16 @@ define([
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/notification/user",true);
         xhr.setRequestHeader("Content-Type","application/json",true);
+
+
+        xhr.setRequestHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+        xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
+        xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        xhr.setRequestHeader("Access-Control-Max-Age", "3600");
+        xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
+
+
+
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);    
