@@ -112,7 +112,7 @@ define([
         xhr.setRequestHeader("Content-Type","application/json",true);
 
 
-        xhr.setRequestHeader("Access-Control-Allow-Origin","*" );
+        xhr.setRequestHeader("Access-Control-Allow-Origin","https://mobile.useinsider.com/api/v1/notification/user" );
         xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
         xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         xhr.setRequestHeader("Access-Control-Max-Age", "3600");
@@ -122,7 +122,8 @@ define([
 
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
-            console.log(xhr.readyState);    
+            console.log(xhr.readyState);
+            console.log(xhr.responseText);    
         };
         xhr.send(jsonObj);
         
