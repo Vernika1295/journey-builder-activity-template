@@ -62,10 +62,6 @@ define([
         console.log(endpoints);
     }
 
-    function callout(){
-        alert("hi");
-    }
-
     function save() {
         var campaignId=$("#camp").val();
         var title=$("#titl").val();
