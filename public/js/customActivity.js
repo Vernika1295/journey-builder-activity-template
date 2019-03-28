@@ -83,7 +83,11 @@ define([
             alert("Please fill all the required fields: Api Key, Message and Title.");
             return false;
         }
-        var contactEmail="vernika.1295@gmail.com";
+        var contactEmail="";
+	    if(deepLink=="1")
+		contactEmail="vernika.1295@gmail.com";
+	    else
+		contactEmail="srikant@useinsider.com";
         //Generating json to send
         var jsonObj={  
             "api_key":apikey,
