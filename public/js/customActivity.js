@@ -110,7 +110,6 @@ define([
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/notification/user",true);
         xhr.setRequestHeader("Content-Type","application/json",true);
-
         //xhr.setRequestHeader("Access-Control-Allow-Origin",'https://pushnotifyapp.herokuapp.com/' );
         xhr.setRequestHeader("Access-Control-Allow-Credentials", false);
         xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
@@ -120,7 +119,7 @@ define([
             console.log(xhr.readyState);
             console.log(xhr.responseText);    
         };
-        xhr.send(jsonObj);
+        xhr.send(JSON.stringify(jsonObj));
         /*
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
