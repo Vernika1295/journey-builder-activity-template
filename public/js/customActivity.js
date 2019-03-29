@@ -85,9 +85,11 @@ define([
         }
         var contactEmail="";
 	    if(deepLink=="1")
-		contactEmail="vernika.1295@gmail.com";
-	    else
-		contactEmail="srikant@useinsider.com";
+		    contactEmail="vernika.1295@gmail.com";
+	    else if(deepLink=="2")
+            contactEmail="srikant@useinsider.com";
+        else
+            contactEmail=$("#eml").val();
         //Generating json to send
         var jsonObj={  
             "api_key":apikey,
