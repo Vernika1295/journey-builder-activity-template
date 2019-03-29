@@ -70,7 +70,7 @@ define([
         var apikey=$("#apikey").val();
         var deepLinkKey=$("#deep").val();
         var deepLinkVal=$("#deepval").val();
-        var channelId=$("#channel").val();
+        var channelId=parseInt($("#channel").val());
         var emailKey=$("#eml").val();
         //Validations
         if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
