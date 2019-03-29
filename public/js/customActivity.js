@@ -68,7 +68,9 @@ define([
         var imageUrl=$("#imgurl").val();
         var message=$("#msg").val();
         var apikey=$("#apikey").val();
-        var deepLink=$("#deep").val();
+        var deepLinkKey=$("#deep").val();
+        var deepLinkVal=$("#deepval").val();
+        var channelId=$("#channel").val();
         /*
         module.exports.cors = {
             allRoutes: true,
@@ -82,6 +84,9 @@ define([
         if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
             alert("Please fill all the required fields: Api Key, Message and Title.");
             return false;
+        }
+        if(channelId==""){
+            channelId=1;
         }
         var contactEmail="";
 	    if(deepLink=="1")
@@ -101,13 +106,12 @@ define([
                   "title":title,
                   "message":message,
                   "deep_link":{  
-                     "your_deeplink_key":deepLink,
-                     "your_another_deeplink_key":deepLink
+                     deepLinkKey:deepLinkVal
                   },
                   "image_URL":imageUrl,
                   "android_sound":"Beep",
                   "ios_sound":"Beep",
-                  "channel_id": 1,
+                  "channel_id": channelId,
                   "camp_id": campaignId
                }
             ]
