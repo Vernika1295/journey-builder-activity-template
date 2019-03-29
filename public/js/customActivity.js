@@ -85,6 +85,7 @@ define([
             contactEmail="vernika.1295@gmail.com";
         }
         //Generating json to send
+        /*
         var jsonObj={  
             "api_key":apikey,
             "notifications":[  
@@ -105,8 +106,28 @@ define([
                   "camp_id": campaignId
                }
             ]
-         }    
-        console.log("Json structure: "+JSON.stringify(jsonObj));
+         } */   
+         var jsonObj={  
+            "api_key":apikey,
+            "notifications":[  
+               {
+                  "target":{  
+                     "email":contactEmail
+                  },
+                  "title":title,
+                  "message":message,
+                  "deep_link":{  
+                     deepLinkKey:deepLinkVal
+                  },
+                  "image_URL":imageUrl,
+                  "android_sound":"Beep",
+                  "ios_sound":"Beep",
+                  "channel_id": channelId,
+                  "camp_id": campaignId
+               }
+            ]
+         }
+         console.log("Json structure: "+JSON.stringify(jsonObj));
         var xhr=new XMLHttpRequest();
         xhr.open("POST","https://mobile.useinsider.com/api/v1/notification/user",true);
         xhr.setRequestHeader("Content-Type","application/json");
