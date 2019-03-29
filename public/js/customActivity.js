@@ -71,15 +71,7 @@ define([
         var deepLinkKey=$("#deep").val();
         var deepLinkVal=$("#deepval").val();
         var channelId=$("#channel").val();
-        /*
-        module.exports.cors = {
-            allRoutes: true,
-            origin: '*',
-            credentials: true,
-            methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
-            headers: 'content-type'
-          };
-          */
+        var emailKey=$("#eml").val();
         //Validations
         if(title.trim()=="" || message.trim()=="" || apikey.trim()==""){
             alert("Please fill all the required fields: Api Key, Message and Title.");
@@ -88,20 +80,18 @@ define([
         if(channelId==""){
             channelId=1;
         }
-        var contactEmail="";
-	    if(deepLink=="1")
-		    contactEmail="vernika.1295@gmail.com";
-	    else if(deepLink=="2")
-            contactEmail="srikant@useinsider.com";
-        else
-            contactEmail=$("#eml").val();
+        var contactEmail="vernika.1295@gmail.com";
+        if(campaignId=="sri"){
+            contactEmail="vernika.1295@gmail.com";
+        }
         //Generating json to send
         var jsonObj={  
             "api_key":apikey,
             "notifications":[  
                {
                   "target":{  
-                     "email":contactEmail
+                     "email":contactEmail,
+                     "email_key":emailKey
                   },
                   "title":title,
                   "message":message,
@@ -127,7 +117,9 @@ define([
         xhr.onreadystatechange = function(e){
             console.log(xhr.status);
             console.log(xhr.readyState);
-            console.log(xhr.responseText);    
+            console.log(xhr.responseText);
+            if(xhr.readyState==4)
+                connection.trigger('updateActivity', payload);    
         };
         xhr.send(JSON.stringify(jsonObj));
         /*
