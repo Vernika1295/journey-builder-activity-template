@@ -42,11 +42,6 @@
         "verb": "POST",
         "useJwt": true
        },
-      "stop": {
-        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
-      },
       "validate": {
         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
