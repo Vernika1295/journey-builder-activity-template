@@ -18,7 +18,11 @@ define([
         function onRender() {
             // JB will respond the first time 'ready' is called with 'initActivity'
             connection.trigger('ready');
-
+            require(['mongodb'], function (foo) {
+                alert("Yayy");
+                //foo is now loaded.
+            });
+                
             connection.trigger('requestTokens');
             connection.trigger('requestEndpoints');
         }
