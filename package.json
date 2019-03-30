@@ -1,5 +1,5 @@
 {
-  "name": "jb-activity-template",
+  "name": "push-notify-app",
   "version": "1.0.0",
   "description": "Journey Builder Activity Template",
   "engines": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devsutd/journey-builder-activity-template.git"
+    "url": "git+https://github.com/Vernika1295/journey-builder-activity-template.git"
   },
   "keywords": [
     "journey",
@@ -18,12 +18,12 @@
     "salesforce marketing cloud",
     "heroku"
   ],
-  "author": "Devs United",
+  "author": "vernika arora",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/devsutd/journey-builder-activity-template/issues"
+    "url": "https://github.com/Vernika1295/journey-builder-activity-template/issues"
   },
-  "homepage": "https://github.com/devsutd/journey-builder-activity-template#readme",
+  "homepage": "https://github.com/Vernika1295/journey-builder-activity-template#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "bower": "^1.8.0",
