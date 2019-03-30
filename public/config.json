@@ -21,7 +21,7 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://pushnotifyapp.herokuapp.com/journeybuilder.execute",
+          "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "{'Content-Type':'application/json'}",
