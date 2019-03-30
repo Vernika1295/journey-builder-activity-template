@@ -1,89 +1,87 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/icon.png",
-    "iconSmall": "images/iconSmall.png",
-    "category": "message"
+      "icon": "images/icon.png",
+      "iconSmall": "images/iconSmall.png",
+      "category": "message"
   },
   "type": "REST",
+  
   "lang": {
-    "en-US": {
-      "name": "Insider Notification",
-    "description": "Push notifications using Insider",
-    "step1Label": "Configure Activity"
-  }
+      "en-US": {
+          "name": "Insider Notification",
+        "description": "Push notifications using Insider",
+        "step1Label": "Configure Activity"
+      }
   },
   "arguments": {
       "execute": {
-          "inArguments": [
-              {
-                  "emailAddress": "{{Contact.Default.EmailAddress}}"
-              },
-              {
-                  "phoneNumber": "{{Contact.Default.Phone}}"
-              }
-          ],
-          "outArguments": [
-              {
-                  "foundSignupDate": ""
-              }
-          ],
-          "url":  "https://pushnotifyapp.herokuapp.com/journeybuilder/execute"
+         "inArguments":[
+          {
+            "emailAddress": "{{Contact.Default.EmailAddress}}"
+        },
+        {
+            "phoneNumber": "{{Contact.Default.Phone}}"
+        }					
+    ],
+        "outArguments": [],
+        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/execute",
+         "verb": "POST",
+          "body": "",
+          "header": "{'Content-Type':'application/json'}",
+          "format": "json",
+          "useJwt": true,
+          "timeout": 10000
       }
   },
   "configurationArguments": {
     "applicationExtensionKey": "1fe3225a-6169-4c74-8a4a-061165d868eb",
-     "save": {
-         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/save"
+    "save": {
+      "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/save",
+        "verb": "POST",
+      "useJwt": true
      },
      "publish": {
-         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish"
+      "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish",
+      "verb": "POST",
+      "useJwt": true
      },
-     "validate": {
-         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/validate"
-     },
-     "stop": {
-         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/stop"
-     }
+    "validate": {
+      "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+      "useJwt": true
+    }
   },
   "wizardSteps": [
-    { "label": "Configure Activity", "key": "step1" }
+      { "label": "Configure Activity", "key": "step1" }
   ],
   "userInterfaces": {
-    "configModal": {
-      "height": 400,
-      "width": 1000,
-    "fullscreen": false
-    }
+      "configModal": {
+          "height": 400,
+          "width": 1000,
+        "fullscreen": false
+      }
   },
   "schema": {
       "arguments": {
           "execute": {
-              "inArguments": [
-                  {
-                      "phoneNumber": {
-                          "dataType": "Phone",
-                          "isNullable": false,
-                          "direction": "in"   
-                      }
-                  },
-                  {
-                      "emailAddress": {
-                          "dataType": "Email",
-                          "isNullable": false,
-                          "direction": "in"
-                      }
-                  }
-              ],
-              "outArguments": [
-                  {
-                      "foundSignupDate": {
-                          "dataType": "Date",
-                          "direction": "out",
-                          "access": "visible"
-                      }
-                  }
-              ]
+              "inArguments": [{
+                "phoneNumber": {
+                    "dataType": "Phone",
+                    "isNullable": false,
+                    "direction": "in"   
+                }
+            },
+            {
+                "emailAddress": {
+                    "dataType": "Email",
+                    "isNullable": false,
+                    "direction": "in"
+                }
+            }],
+              "sendableCustomObjectField": "EmailAddress",
+              "sendableSubscriberField": "_SubscriberKey",
+              "outArguments": []
           }
       }
   }
