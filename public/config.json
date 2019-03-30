@@ -39,16 +39,16 @@
        },
        "publish": {
         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
+        "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/stop",
+        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/validate",
+        "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish",
         "verb": "POST",
         "useJwt": true
       }
