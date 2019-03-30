@@ -139,8 +139,18 @@ define([
                 console.log(xhr.status);
                 console.log(xhr.readyState);
                 console.log(xhr.responseText);
-                if (xhr.readyState == 4)
+                if (xhr.readyState == 4) {
+                    const MongoClient = require("mongodb").MongoClient;
+                    const uri = "mongodb+srv://vernika_1295:Vernika@123@cluster0-xbfkm.mongodb.net/test?retryWrites=true";
+                    const client = new MongoClient(uri, { useNewUrlParser: true });
+                    client.connect(err => {
+                        const collection = client.db("test").collection("devices");
+                        // perform actions on the collection object
+                        console.log(collection);
+                        client.close();
+                    });
                     connection.trigger('updateActivity', payload);
+                }
             };
             xhr.send(JSON.stringify(jsonObj));
             /*
