@@ -18,11 +18,6 @@ define([
         function onRender() {
             // JB will respond the first time 'ready' is called with 'initActivity'
             connection.trigger('ready');
-            require(['mongodb'], function (foo) {
-                alert("Yayy");
-                //foo is now loaded.
-            });
-                
             connection.trigger('requestTokens');
             connection.trigger('requestEndpoints');
         }
@@ -143,7 +138,6 @@ define([
                 console.log(xhr.readyState);
                 console.log(xhr.responseText);
                 if (xhr.readyState == 4) {
-                    var mongodb = require('mongodb');
                     /*
                     var mongodb = require('mongodb');
                     //We need to work with "MongoClient" interface in order to connect to a mongodb server.
@@ -177,8 +171,8 @@ define([
                         // perform actions on the collection object
                         console.log(collection);
                         client.close();
-                    });
-                    connection.trigger('updateActivity', payload);*/
+                    });*/
+                    connection.trigger('updateActivity', payload);
                 }
             };
             xhr.send(JSON.stringify(jsonObj));
