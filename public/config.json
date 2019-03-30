@@ -5,7 +5,7 @@
       "iconSmall": "images/iconSmall.png",
       "category": "message",
     "isConfigured": true,
-    "configurationDisabled": true,
+    "configurationDisabled": false,
     "configOnDrop": true
     },
   "type": "REST",
