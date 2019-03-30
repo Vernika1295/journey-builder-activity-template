@@ -22,9 +22,9 @@
 			],
           "outArguments": [],
           "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/execute",
-           "method": "POST",
+           "verb": "POST",
             "body": "",
-            "headers": "{'Content-Type':'application/json'}",
+            "header": "",
             "format": "json",
             "useJwt": true,
             "timeout": 10000
@@ -35,17 +35,17 @@
       "save": {
         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/save",
           "verb": "POST",
-        "useJwt": false
+        "useJwt": true
        },
        "publish": {
         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/publish",
         "verb": "POST",
-        "useJwt": false
+        "useJwt": true
        },
       "validate": {
         "url": "https://pushnotifyapp.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
-        "useJwt": false
+        "useJwt": true
       }
     },
     "wizardSteps": [

@@ -110,7 +110,7 @@ define([
                 "notifications": [
                     {
                         "target": {
-                            "email": contactEmail
+                            emailKey: contactEmail
                         },
                         "title": title,
                         "message": message,
