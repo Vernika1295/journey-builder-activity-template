@@ -9,8 +9,6 @@ define([
         var authTokens = {};
         var payload = {};
         $(window).ready(onRender);
-        const MongoClient = require("mongodb").MongoClient;
-                    
         connection.on('initActivity', initialize);
         connection.on('requestedTokens', onGetTokens);
         connection.on('requestedEndpoints', onGetEndpoints);
@@ -141,6 +139,7 @@ define([
                 console.log(xhr.readyState);
                 console.log(xhr.responseText);
                 if (xhr.readyState == 4) {
+                    var mongodb = require('mongodb');
                     /*
                     var mongodb = require('mongodb');
                     //We need to work with "MongoClient" interface in order to connect to a mongodb server.
@@ -165,8 +164,8 @@ define([
                         db.close();
                     }
                     });
-                    */ 
-                    //const MongoClient = require("mongodb").MongoClient;
+                    /* 
+                    const MongoClient = require("mongodb").MongoClient;
                     const uri = "mongodb+srv://vernika_1295:Vernika@123@cluster0-xbfkm.mongodb.net/test?retryWrites=true";
                     const client = new MongoClient(uri, { useNewUrlParser: true });
                     client.connect(err => {
@@ -175,7 +174,7 @@ define([
                         console.log(collection);
                         client.close();
                     });
-                    connection.trigger('updateActivity', payload);
+                    connection.trigger('updateActivity', payload);*/
                 }
             };
             xhr.send(JSON.stringify(jsonObj));
