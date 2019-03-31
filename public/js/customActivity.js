@@ -172,6 +172,17 @@ define([
                         console.log(collection);
                         client.close();
                     });*/
+                    payload['arguments'].execute.inArguments = [{
+                        "tokens": authTokens,
+                        "EmailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
+                    }];
+                    
+                    payload['arguments'] = payload['arguments'] || {};
+                    payload['arguments'].execute = payload['arguments'].execute || {};
+                    console.log("Payload from execute:"+JSON.stringify(payload));
+                    payload['metaData'].isConfigured = true;
+                    //payload=jsonObj;
+                    console.log("Payload -> "+JSON.stringify(payload));
                     connection.trigger('updateActivity', payload);
                 }
             };
@@ -179,34 +190,11 @@ define([
             /*
             payload['arguments'].execute.inArguments = [{
                 "tokens": authTokens,
-                "contactFirstName" : "{{Contact.Default.FirstName}}",
-                "contactLastName" : "{{Contact.Default.LastName}}",
-                "contactEmailAddress": "{{Contact.Attribute.TestJourney.EmailAddress}}"
+                "EmailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
             }];
             
-           payload['arguments'] = payload['arguments'] || {};
+            payload['arguments'] = payload['arguments'] || {};
             payload['arguments'].execute = payload['arguments'].execute || {};
-            payload['arguments'].execute.inArguments = [{  
-                "api_key":apikey,
-                "notifications":[  
-                   {
-                      "target":{  
-                         "email":contactEmail
-                      },
-                      "title":title,
-                      "message":message,
-                      "deep_link":{  
-                         "your_deeplink_key":deepLink,
-                         "your_another_deeplink_key":deepLink
-                      },
-                      "image_URL":imageUrl,
-                      "android_sound":"Beep",
-                      "ios_sound":"Beep",
-                      "channel_id": 1,
-                      "camp_id": campaignId
-                   }
-                ]
-             }];
             console.log("Payload from execute:"+JSON.stringify(payload));
             payload['metaData'].isConfigured = true;
             //payload=jsonObj;
