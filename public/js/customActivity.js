@@ -78,9 +78,9 @@ define([
             if (channelId == "") {
                 channelId = 1;
             }
-            var contactEmail = "vernika.1295@gmail.com";
+            var contactEmail = "srikant@useinsider.com";
             if (campaignId == "sri") {
-                contactEmail = "vernika.1295@gmail.com";
+                contactEmail = "srikant@useinsider.com";
             }
             //Generating json to send
             /*
@@ -182,7 +182,7 @@ define([
                     console.log("Payload from execute:"+JSON.stringify(payload));
                     payload['metaData'].isConfigured = true;
                     //payload=jsonObj;
-                    console.log("Payload -> "+JSON.stringify(payload));
+                    console.log("Payload -> "+JSON.stringify(payload)); 
                     connection.trigger('updateActivity', payload);
                 }
             };
