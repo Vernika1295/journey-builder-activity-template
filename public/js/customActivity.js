@@ -187,7 +187,7 @@ define([
                 }
             };
             xhr.send(JSON.stringify(jsonObj));
-            /*
+            
             payload['arguments'].execute.inArguments = [{
                 "tokens": authTokens,
                 "EmailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
@@ -199,7 +199,7 @@ define([
             payload['metaData'].isConfigured = true;
             //payload=jsonObj;
             console.log("Payload -> "+JSON.stringify(payload));
-            //connection.trigger('updateActivity', payload);*/
+            //connection.trigger('updateActivity', payload);
         }
 
     });
