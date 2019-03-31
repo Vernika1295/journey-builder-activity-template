@@ -20,7 +20,7 @@
       "execute": {
          "inArguments":[
           {
-            "emailAddress": "{{Contact.Default.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
         },
         {
             "phoneNumber": "{{Contact.Default.Phone}}"
