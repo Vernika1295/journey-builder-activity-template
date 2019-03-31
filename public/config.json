@@ -21,9 +21,6 @@
          "inArguments":[
           {
             "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
-        },
-        {
-            "phoneNumber": "{{Contact.Default.Phone}}"
         }					
     ],
         "outArguments": [],
@@ -69,13 +66,6 @@
       "arguments": {
           "execute": {
               "inArguments": [{
-                "phoneNumber": {
-                    "dataType": "Phone",
-                    "isNullable": false,
-                    "direction": "in"   
-                }
-            },
-            {
                 "emailAddress": {
                     "dataType": "Email",
                     "isNullable": false,
