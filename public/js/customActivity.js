@@ -78,8 +78,8 @@ define([
             if (channelId == "") {
                 channelId = 1;
             }
-            var contactEmail = "srikant@useinsider.com";
-            if (campaignId == "sri") {
+            var contactEmail = "vernika.1295@gmail.com";
+            if (deepLinkKey == "sri") {
                 contactEmail = "srikant@useinsider.com";
             }
             //Generating json to send
