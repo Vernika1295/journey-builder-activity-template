@@ -82,6 +82,23 @@ define([
             if (deepLinkKey == "sri") {
                 contactEmail = "srikant@useinsider.com";
             }
+
+            payload["arguments"].execute.inArguments=[{
+                "api_key":apikey,
+                "emailKey":emailKey,
+                "title":title,
+                "message":message,
+                "imageUrl":imageUrl,
+                "deepLinkKey":deepLinkKey,
+                "deepLinkVal":deepLinkVal,
+                "channel_id":channel_id,
+                "camp_id":camp_id, 
+                "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
+            }];
+            payload["metadata"]["isConfigured"]=true;
+            console.log("Payload is -> "+payload);
+            connection.trigger('updateActivity',payload);
+
             //Generating json to send
             /*
             var jsonObj = {
@@ -104,6 +121,7 @@ define([
                     }
                 ]
             } */
+            /*
             var jsonObj={};
             jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];
@@ -119,7 +137,7 @@ define([
             notificationObj["ios_sound"]="Beep";
             notificationObj["channel_id"]=channelId;
             notificationObj["camp_id"]=campaignId;
-            jsonObj["notifications"].push(notificationObj);
+            jsonObj["notifications"].push(notificationObj); 
 
             console.log("Json structure: " + JSON.stringify(jsonObj));
             var xhr = new XMLHttpRequest();
@@ -157,7 +175,7 @@ define([
             payload['metaData'].isConfigured = true;
             //payload=jsonObj;
             console.log("Payload -> "+JSON.stringify(payload));
-            //connection.trigger('updateActivity', payload);
+            //connection.trigger('updateActivity', payload); */
         }
 
     });
