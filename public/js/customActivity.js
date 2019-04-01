@@ -91,8 +91,8 @@ define([
                 "imageUrl":imageUrl,
                 "deepLinkKey":deepLinkKey,
                 "deepLinkVal":deepLinkVal,
-                "channel_id":channel_id,
-                "camp_id":camp_id, 
+                "channel_id":channelId,
+                "camp_id":campaignId, 
                 "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
             }];
             payload["metadata"]["isConfigured"]=true;
