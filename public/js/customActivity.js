@@ -105,7 +105,7 @@ define([
                 ]
             } */
             var jsonObj={};
-            jsonObj["api_key"]=apiKey;
+            jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];
             var notificationObj={};
             notificationObj["target"]={};
