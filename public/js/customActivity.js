@@ -95,7 +95,7 @@ define([
                 "camp_id":campaignId, 
                 "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
             }];
-            payload["metadata"]["isConfigured"]=true;
+            payload["metaData"]["isConfigured"]=true;
             console.log("Payload is -> "+payload);
             connection.trigger('updateActivity',payload);
 
